@@ -46,3 +46,10 @@ df_name_length = pd.read_sql("""
 SELECT LENGTH(lastName) AS name_length
 FROM employees
 """, conn)
+
+# STEP 7
+# Replace None with your code
+df_short_title = pd.read_sql("""
+SELECT SUBSTR(jobTitle, 1, 2) AS short_title
+FROM employees
+""", conn)
