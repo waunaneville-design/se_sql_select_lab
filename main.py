@@ -29,3 +29,13 @@ SELECT employeeNumber AS ID, lastName
 FROM employees
 """, conn)
 
+# STEP 5
+# Replace None with your code
+df_executive = pd.read_sql("""
+SELECT *,
+       CASE
+           WHEN jobTitle IN ('President', 'VP Sales', 'VP Marketing') THEN 'Executive'
+           ELSE 'Not Executive'
+       END AS role
+FROM employees
+""", conn)
