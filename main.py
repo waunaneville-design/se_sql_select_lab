@@ -60,3 +60,15 @@ sum_total_price = pd.read_sql("""
 SELECT SUM(ROUND(priceEach * quantityOrdered, 0)) AS total_price
 FROM orderDetails
 """, conn).iloc[0].tolist()
+
+# STEP 9
+# Replace None with your code
+df_day_month_year = pd.read_sql("""
+SELECT orderDate,
+       STRFTIME('%d', orderDate) AS day,
+       STRFTIME('%m', orderDate) AS month,
+       STRFTIME('%Y', orderDate) AS year
+FROM orderDetails
+""", conn)
+
+conn.close()
