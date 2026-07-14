@@ -39,3 +39,10 @@ SELECT *,
        END AS role
 FROM employees
 """, conn)
+
+# STEP 6
+# Replace None with your code
+df_name_length = pd.read_sql("""
+SELECT LENGTH(lastName) AS name_length
+FROM employees
+""", conn)
