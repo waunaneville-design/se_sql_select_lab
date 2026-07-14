@@ -58,7 +58,7 @@ FROM employees
 # Replace None with your code
 sum_total_price = pd.read_sql("""
 SELECT SUM(ROUND(priceEach * quantityOrdered, 0)) AS total_price
-FROM orderDetails
+FROM orderdetails
 """, conn).iloc[0].tolist()
 
 # STEP 9
@@ -68,7 +68,7 @@ SELECT orderDate,
        STRFTIME('%d', orderDate) AS day,
        STRFTIME('%m', orderDate) AS month,
        STRFTIME('%Y', orderDate) AS year
-FROM orderDetails
+FROM orders
 """, conn)
 
 conn.close()
