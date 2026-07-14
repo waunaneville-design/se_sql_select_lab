@@ -15,3 +15,9 @@ SELECT employeeNumber, lastName
 FROM employees
 """, conn)
 
+# STEP 3
+# Replace None with your code
+df_five_reverse = pd.read_sql("""
+SELECT lastName, employeeNumber
+FROM employees
+""", conn)
